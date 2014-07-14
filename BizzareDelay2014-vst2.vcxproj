@@ -237,6 +237,7 @@
     <ClInclude Include="DSP_SVF.h" />
     <ClInclude Include="DSP_TapeDelay.h" />
     <ClInclude Include="DSP_TappedDelay.h" />
+    <ClInclude Include="paramIds.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>
