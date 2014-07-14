@@ -61,7 +61,7 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
 {
    TRACE;
 
-   
+  
 
    //init the main delay objects
    tapeDelay1 = new TapeDelay(44100);
@@ -415,9 +415,17 @@ void BizzareDelay2014::Reset()
    IMutexLock lock(this);
 
    double sr = GetSampleRate();
-   tapeDelay1->reset(sr);
-   stereoDelay->reset(sr);
+  
+   //we don't support 192000
+   if (sr != 192000)
+   {
+     tapeDelay1->reset(sr);
+     stereoDelay->reset(sr);
+   }
+  
 
+  
+  
 }
 
 //Called when the user changes a parameter value.
