@@ -230,11 +230,26 @@
   <ItemGroup>
     <ClInclude Include="..\..\WDL\IPlug\IPlugVST.h" />
     <ClInclude Include="BizzareDelay2014.h" />
+    <ClInclude Include="DSP_OnePoleHP.h" />
+    <ClInclude Include="DSP_OnePoleLP.h" />
+    <ClInclude Include="DSP_Sinosc.h" />
+    <ClInclude Include="DSP_StereoDelay.h" />
+    <ClInclude Include="DSP_SVF.h" />
+    <ClInclude Include="DSP_TapeDelay.h" />
+    <ClInclude Include="DSP_TappedDelay.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\WDL\IPlug\IPlugVST.cpp" />
     <ClCompile Include="BizzareDelay2014.cpp" />
+    <ClCompile Include="DSP_OnePoleHP.cpp" />
+    <ClCompile Include="DSP_OnepoleLP.cpp" />
+    <ClCompile Include="DSP_Sinosc.cpp" />
+    <ClCompile Include="DSP_StereoDelay.cpp" />
+    <ClCompile Include="DSP_SVF.cpp" />
+    <ClCompile Include="DSP_TapeDelay.cpp" />
+    <ClCompile Include="DSP_TappedDelay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BizzareDelay2014.rc" />

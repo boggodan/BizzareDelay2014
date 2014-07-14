@@ -2,7 +2,7 @@
 #define __BIZZAREDELAY__
 
 /*
-BizzareDelay2014 - VST, AU
+BizzareDelay - VST, AU
 
 Developed for Bizzare Contact by 1st Creative Solutions
 
@@ -83,12 +83,12 @@ public:
   
 };
 
-class BizzareDelay2014 : public IPlug
+class BizzareDelay : public IPlug
 {
 public:
   
-  BizzareDelay2014(IPlugInstanceInfo instanceInfo);
-  ~BizzareDelay2014();
+  BizzareDelay(IPlugInstanceInfo instanceInfo);
+  ~BizzareDelay();
   
   void Reset();
   void OnParamChange(int paramIdx);

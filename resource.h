@@ -1,18 +1,18 @@
-#define PLUG_MFR "[bv]"
+#define PLUG_MFR "1cl"
 #define PLUG_NAME "BizzareDelay2014"
 
 #define PLUG_CLASS_NAME BizzareDelay2014
 
-#define BUNDLE_MFR "[bv]"
+#define BUNDLE_MFR "1cl"
 #define BUNDLE_NAME "BizzareDelay2014"
 
-#define PLUG_ENTRY BizzareDelay2014_Entry
-#define PLUG_VIEW_ENTRY BizzareDelay2014_ViewEntry
+#define PLUG_ENTRY BizzareDelay_Entry
+#define PLUG_VIEW_ENTRY BizzareDelay_ViewEntry
 
 #define PLUG_ENTRY_STR "BizzareDelay2014_Entry"
 #define PLUG_VIEW_ENTRY_STR "BizzareDelay2014_ViewEntry"
 
-#define VIEW_CLASS BizzareDelay2014_View
+#define VIEW_CLASS BizzareDelay_View
 #define VIEW_CLASS_STR "BizzareDelay2014_View"
 
 // Format        0xMAJR.MN.BG - in HEX! so version 10.1.5 would be 0x000A0105
@@ -21,29 +21,61 @@
 
 // http://service.steinberg.de/databases/plugin.nsf/plugIn?openForm
 // 4 chars, single quotes. At least one capital letter
-#define PLUG_UNIQUE_ID 'Ipef'
+#define PLUG_UNIQUE_ID 'bzdl'
 // make sure this is not the same as BUNDLE_MFR
-#define PLUG_MFR_ID 'Acme'
+#define PLUG_MFR_ID 'bzll'
 
 // ProTools stuff
-
-#if (defined(AAX_API) || defined(RTAS_API)) && !defined(_PIDS_)
-  #define _PIDS_
-  const int PLUG_TYPE_IDS[2] = {'EFN1', 'EFN2'};
-  const int PLUG_TYPE_IDS_AS[2] = {'EFA1', 'EFA2'}; // AudioSuite
-#endif
-
-#define PLUG_MFR_PT "[bv]\n[bv]\nAcme"
-#define PLUG_NAME_PT "BizzareDelay2014\nIPEF"
-#define PLUG_TYPE_PT "Effect"
-#define PLUG_DOES_AUDIOSUITE 1
-
-/* PLUG_TYPE_PT can be "None", "EQ", "Dynamics", "PitchShift", "Reverb", "Delay", "Modulation", 
-"Harmonic" "NoiseReduction" "Dither" "SoundField" "Effect" 
-instrument determined by PLUG _IS _INST
-*/
+#define PLUG_MFR_DIGI "1cl\n1cl\nAcme\n"
+#define PLUG_NAME_DIGI "BizzareDelay2014\nIPEF"
+#define EFFECT_TYPE_DIGI "Effect" // valid options "None" "EQ" "Dynamics" "PitchShift" "Reverb" "Delay" "Modulation" "Harmonic" "NoiseReduction" "Dither" "SoundField" "Effect" instrument determined by PLUG _IS _INST
 
 #define PLUG_CHANNEL_IO "1-1 2-2"
+
+// if you want to do anything unusual re i/o you need to #ifdef PLUG_CHANNEL_IO and PLUG_SC_CHANS depending on the api because they all do it differently...
+
+// PLUGINS WITH SIDE CHAIN INPUTS
+// ***************************
+//#ifdef RTAS_API
+// PLUG_SC_CHANS defines the number of inputs in the PLUG_CHANNEL_IO that should be considered sidechain inputs.
+// RTAS can only have one mono sidechain input, so for instance to make a mono/stereo plugin with a side chain input you could do this.
+//#define PLUG_CHANNEL_IO "2-1 3-2"
+//#define PLUG_SC_CHANS 1
+//#else // AU & VST2
+// AU sidechains work with audiounit effects or midi controlled effects only... not instruments
+// this works for a mono plug with optional mono sidechain...
+//#define PLUG_CHANNEL_IO "1-1 2-1"
+//#define PLUG_SC_CHANS 1
+// this DOESN'T work (in aulab) for a stereo plug with optional mono sidechain...
+//#define PLUG_CHANNEL_IO "2-2 3-2"
+//#define PLUG_SC_CHANS 1
+// this works for a stereo plug with optional stereo sidechain...
+//#define PLUG_CHANNEL_IO "2-2 4-2"
+//#define PLUG_SC_CHANS 2
+// but a combination DOESN'T work right now (in aulab)
+//#define PLUG_CHANNEL_IO "1-1 2-1 2-2 4-2"
+//#define PLUG_SC_CHANS 1
+//#endif
+
+// PLUGIN INSTRUMENTS (WITH MULTIPLE OUTPUTS)
+// ***************************
+//#ifdef RTAS_API
+// rtas instruments have to say they have inputs
+// rtas multiple outputs will result in a multichannel bus
+//#define PLUG_CHANNEL_IO "1-1 2-2"
+//#else // AU & VST2
+// in AU these will be grouped as stereo pairs... that is fixed right now
+//#define PLUG_CHANNEL_IO "0-2 0-4 0-6 0-8"
+//#endif
+//#define PLUG_SC_CHANS 0
+
+// MULTI-CHANNEL EFFECT PLUGINS (I.E MONO->QUAD, QUAD->QUAD etc)
+// ***************************
+// seems to be ok for au and rtas
+//#define PLUG_CHANNEL_IO "1-4 4-4"
+//#define PLUG_SC_CHANS 0
+
+//
 
 #define PLUG_LATENCY 0
 #define PLUG_IS_INST 0
@@ -54,30 +86,53 @@ instrument determined by PLUG _IS _INST
 #define PLUG_DOES_STATE_CHUNKS 0
 
 // Unique IDs for each image resource.
-#define KNOB_ID 101
+
+
+
+#define KNOB_TOP1      101
+#define KNOB_TOP2      102
+#define KNOB_BTM1      103
+#define KNOB_BTM2      104
+#define PONG_BTN        105
+#define SLIDER_KNOB    106
+#define SLIDER_BODY    107
+#define SWITCHER_BUTTON  108
+#define BG_ID              109
 
 // Image resource locations for this plug.
-#define KNOB_FN "resources/img/knob.png"
+
+
+#define KNOB_TOP1_FN               "resources/img/TopBig.png"
+#define KNOB_TOP2_FN			   "resources/img/TopSmall.png"
+#define KNOB_BTM1_FN			   "resources/img/BottomBig3.png"
+#define KNOB_BTM2_FN			   "resources/img/BottomSmall.png"
+#define PONG_BTN_FN					"resources/img/PongButton.png"
+#define SLIDER_KNOB_FN			  "resources/img/SliderKnob.png"
+#define SLIDER_BODY_FN			  "resources/img/SliderBody.png"
+#define SWITCHER_BUTTON_FN    "resources/img/SwitcherButton.png"
+#define BG_FN  "resources/img/GUIFINAL2_1CL.png"
 
 // GUI default dimensions
-#define GUI_WIDTH 300
-#define GUI_HEIGHT 300
+#define GUI_WIDTH   595
+#define GUI_HEIGHT  433
 
 // on MSVC, you must define SA_API in the resource editor preprocessor macros as well as the c++ ones
-#if defined(SA_API) && !defined(OS_IOS)
-#include "app_wrapper/app_resource.h"
+#ifdef SA_API
+  #ifndef OS_IOS
+    #include "app_wrapper/app_resource.h"
+  #endif
 #endif
 
 // vst3 stuff
 #define MFR_URL "www.olilarkin.co.uk"
 #define MFR_EMAIL "spam@me.com"
-#define EFFECT_TYPE_VST3 "Fx"
+#define EFFECT_TYPE_VST3 kFx
 
-/* "Fx|Analyzer"", "Fx|Delay", "Fx|Distortion", "Fx|Dynamics", "Fx|EQ", "Fx|Filter",
-"Fx", "Fx|Instrument", "Fx|InstrumentExternal", "Fx|Spatial", "Fx|Generator",
-"Fx|Mastering", "Fx|Modulation", "Fx|PitchShift", "Fx|Restoration", "Fx|Reverb",
-"Fx|Surround", "Fx|Tools", "Instrument", "Instrument|Drum", "Instrument|Sampler",
-"Instrument|Synth", "Instrument|Synth|Sampler", "Instrument|External", "Spatial",
-"Spatial|Fx", "OnlyRT", "OnlyOfflineProcess", "Mono", "Stereo",
-"Surround"
+/* kFxAnalyzer, kFxDelay, kFxDistortion, kFxDynamics, kFxEQ, kFxFilter,
+kFx, kFxInstrument, kFxInstrumentExternal, kFxSpatial, kFxGenerator,
+kFxMastering, kFxModulation, kFxPitchShift, kFxRestoration, kFxReverb,
+kFxSurround, kFxTools, kInstrument, kInstrumentDrum, kInstrumentSampler,
+kInstrumentSynth, kInstrumentSynthSample, kInstrumentExternal, kSpatial,
+kSpatialFx, kOnlyRealTime, kOnlyOfflineProcess, kMono, kStereo,
+kSurround
 */
