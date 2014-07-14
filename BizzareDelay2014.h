@@ -17,6 +17,8 @@ Graphical Design: Matt O'Neill
 
 //the exponential scaling function and denormalizer
 #include "utilities.h"
+
+//param id numbers
 #include "paramIds.h"
 
 class IKnobMultiControlText : public IKnobControl  

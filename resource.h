@@ -6,13 +6,13 @@
 #define BUNDLE_MFR "1cl"
 #define BUNDLE_NAME "BizzareDelay2014"
 
-#define PLUG_ENTRY BizzareDelay_Entry
-#define PLUG_VIEW_ENTRY BizzareDelay_ViewEntry
+#define PLUG_ENTRY BizzareDelay2014_Entry
+#define PLUG_VIEW_ENTRY BizzareDelay2014_ViewEntry
 
 #define PLUG_ENTRY_STR "BizzareDelay2014_Entry"
 #define PLUG_VIEW_ENTRY_STR "BizzareDelay2014_ViewEntry"
 
-#define VIEW_CLASS BizzareDelay_View
+#define VIEW_CLASS BizzareDelay2014_View
 #define VIEW_CLASS_STR "BizzareDelay2014_View"
 
 // Format        0xMAJR.MN.BG - in HEX! so version 10.1.5 would be 0x000A0105
@@ -21,9 +21,9 @@
 
 // http://service.steinberg.de/databases/plugin.nsf/plugIn?openForm
 // 4 chars, single quotes. At least one capital letter
-#define PLUG_UNIQUE_ID 'bzdl'
+#define PLUG_UNIQUE_ID 'bZdl'
 // make sure this is not the same as BUNDLE_MFR
-#define PLUG_MFR_ID 'bzll'
+#define PLUG_MFR_ID 'bzLl'
 
 // ProTools stuff
 #define PLUG_MFR_DIGI "1cl\n1cl\nAcme\n"
