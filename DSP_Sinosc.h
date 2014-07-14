@@ -29,7 +29,7 @@ class Sinosc
    /**
    * Generate a new sample.
    */
-   inline float Sinosc::getSample()
+   inline float getSample()
    {
       s[0] = s[0] - a*s[1];
       s[1] = s[1] + a*s[0];

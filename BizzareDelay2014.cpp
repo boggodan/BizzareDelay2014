@@ -7,7 +7,7 @@
 BizzareDelay2014 - VST, AU
 
 Developed for Bizzare Contact by 1st Creative Solutions
-© 2011 1st Creative Solutions LTD
+ï¿½ 2011 1st Creative Solutions LTD
 
 Code: Bogdan Vera.
 Graphical Design: Matt O'Neill
@@ -427,7 +427,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
    char* writeToDisplay = new char[30];
 
    //Lowpass cutoff.
-   if(paramIdx == EParams::k2hicut)
+   if(paramIdx == k2hicut)
    {
       bottomDelay_lpCut = GetParam(paramIdx) -> Value() / 100.0;
       tapeDelay1->setLPCutoff(bottomDelay_lpCut);
@@ -435,7 +435,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2hicutDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2lowcut) //Highpass Cutoff
+   if(paramIdx == k2lowcut) //Highpass Cutoff
    {
       bottomDelay_hpCut = GetParam(paramIdx) -> Value() / 100.0;
       tapeDelay1->setHPCutoff(bottomDelay_hpCut);
@@ -448,7 +448,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       //OBSOLETE
    }
    else
-   if(paramIdx == EParams::k2feedback) //Delay bottomDelay_feedback (for distorting delay)
+   if(paramIdx == k2feedback) //Delay bottomDelay_feedback (for distorting delay)
    {
       bottomDelay_feedback = GetParam(paramIdx) -> Value() / 100.0;
       tapeDelay1->setFeedback(bottomDelay_feedback*1.6);
@@ -456,7 +456,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2feedbackDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2pong) //Turn on or off the ping-pong function for the distorting delay.
+   if(paramIdx == k2pong) //Turn on or off the ping-pong function for the distorting delay.
    {
       onOffPong = GetParam(paramIdx) -> Value() / 100.0;
       if(onOffPong<0.5)
@@ -465,7 +465,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       tapeDelay1->p_pong=true;
    }
    else
-   if(paramIdx == EParams::k2note) //Set the tempo-synced delay time tempoUnit.
+   if(paramIdx == k2note) //Set the tempo-synced delay time tempoUnit.
    {
       bottomDelay_tempoNote = GetParam(paramIdx) -> Value() / 100.0;
    
@@ -506,7 +506,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2noteDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2fine) //Set the fine delay time value.
+   if(paramIdx == k2fine) //Set the fine delay time value.
    {
    	
       bottomDelay_fine = GetParam(paramIdx) -> Value() / 100.0;
@@ -515,7 +515,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
    	
    }
    else
-   if(paramIdx == EParams::k2LFOintensity) //Set LFO intensity
+   if(paramIdx == k2LFOintensity) //Set LFO intensity
    {
    	
       bottomDelay_lfoIntensity = GetParam(paramIdx) -> Value() / 100.0;;;
@@ -524,7 +524,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2LFOintensityDisplay->SetTextFromPlug(writeToDisplay);	
    }
    else
-   if(paramIdx == EParams::k2LFOrate) //Set the LFO rate
+   if(paramIdx == k2LFOrate) //Set the LFO rate
    {
       bottomDelay_lfoRate = GetParam(paramIdx) -> Value() / 100.0;;
       tapeDelay1->setLfoRate((bottomDelay_lfoRate*0.8f+0.2f)*20.0f);
@@ -532,7 +532,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2LFOrateDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2FltInt) //Set the Flutter intensity.
+   if(paramIdx == k2FltInt) //Set the Flutter intensity.
    {
    	
       bottomDelay_fltIntensity = GetParam(paramIdx) -> Value() / 100.0;;
@@ -541,7 +541,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2FltIntDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2FltRate) //Set the flutter rate.
+   if(paramIdx == k2FltRate) //Set the flutter rate.
    {
       bottomDelay_fltRate= GetParam(paramIdx) -> Value() / 100.0;;
       tapeDelay1->setFltRate((bottomDelay_fltRate*0.2+0.8)*50);
@@ -549,14 +549,14 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       k2FltRateDisplay->SetTextFromPlug(writeToDisplay);
    }
    else
-   if(paramIdx == EParams::k2Smooth) //Set the smoothing amount for the fine delay time knob.
+   if(paramIdx == k2Smooth) //Set the smoothing amount for the fine delay time knob.
    {
    	
       bottomDelay_smooth= GetParam(paramIdx) -> Value() / 100.0;;
       tapeDelay1->setSmooth(bottomDelay_smooth*0.0095 + 0.99);
    
    }else
-   if(paramIdx == EParams::k2mix) //Set wet/dry value.
+   if(paramIdx == k2mix) //Set wet/dry value.
    {
       char *ptr;
       bottomDelay_mix = GetParam(paramIdx) -> Value() / 100.0;;
@@ -575,20 +575,20 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       sprintf(writeToDisplay, "%4.2f", bottomDelay_mix);
       k2mixDisplay->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kswitch) //Switches between the two delay topDelay_tempoNote.
+   if(paramIdx == kswitch) //Switches between the two delay topDelay_tempoNote.
    {
       rackSwitch = GetParam(paramIdx) -> Value() / 100.0;
    }else
    
    //STEREO STARTS HERE
    //UNITS
-   if(paramIdx == EParams::kunits) //Set the tempo-synced delay topDelay_tempoNote for the stereo delay.
+   if(paramIdx == kunits) //Set the tempo-synced delay topDelay_tempoNote for the stereo delay.
    {
       topDelay_tempoNote = GetParam(paramIdx) -> Value() / 100.0;
       sprintf(writeToDisplay, "%4.1f", (int)(topDelay_tempoNote*15.0f)+1.0f);
       kunitsDisplay->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kwetdry1) //Set wet/dry for the stereo delay.
+   if(paramIdx == kwetdry1) //Set wet/dry for the stereo delay.
    {
       char *ptr;
       
@@ -610,7 +610,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
    	
    }else
    /////////////////////////////
-   if(paramIdx == EParams::kLP1) //Set LP1 cutoff
+   if(paramIdx == kLP1) //Set LP1 cutoff
    {  
    	
       topDelay_lp1Cutoff = GetParam(paramIdx) -> Value() / 100.0;;
@@ -619,27 +619,27 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       kLP1Display->SetTextFromPlug(writeToDisplay);
    
    }else
-   if(paramIdx == EParams::kHP1) //Set HP1 cutoff
+   if(paramIdx == kHP1) //Set HP1 cutoff
    {
       topDelay_hp1Cutoff = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setHP1Cutoff(topDelay_hp1Cutoff);
       sprintf(writeToDisplay, "%4.0f", getExpo(topDelay_hp1Cutoff));
       kHP1Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kPan1) //Set first panner.
+   if(paramIdx == kPan1) //Set first panner.
    {
       topDelay_pan1 = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setPan1(topDelay_pan1);
       sprintf(writeToDisplay, "%4.1f", topDelay_pan1*2.0f - 1.0);
       kPan1Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kDelay1) //Set the first delay time.
+   if(paramIdx == kDelay1) //Set the first delay time.
    {
       topDelay_delay1  = GetParam(paramIdx) -> Value() / 100.0;
       sprintf(writeToDisplay, "%4.1f", (int)(topDelay_delay1*15.0f)+1.0f);
       kDelay1Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kFeedback1) //Set the first bottomDelay_feedback time.
+   if(paramIdx == kFeedback1) //Set the first bottomDelay_feedback time.
    {
       topDelay_fb1 = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setFeedback1(topDelay_fb1);
@@ -647,7 +647,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       kFeedback1Display->SetTextFromPlug(writeToDisplay);
    
    }else
-   if(paramIdx == EParams::kLevel1) //Set the first gain value.
+   if(paramIdx == kLevel1) //Set the first gain value.
    {
       topDelay_level1 = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setLevel1(topDelay_level1);
@@ -655,34 +655,34 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       kLevel1Display->SetTextFromPlug(writeToDisplay);
    }else
    //////////////////////////////
-   if(paramIdx == EParams::kLP2) //Set the second LP Cutoff.
+   if(paramIdx == kLP2) //Set the second LP Cutoff.
    {
       topDelay_lp2Cutoff = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setLP2Cutoff(topDelay_lp2Cutoff);
       sprintf(writeToDisplay, "%4.0f", topDelay_lp2Cutoff*20000.0f);
       kLP2Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kHP2) //Set the second HP cutoff.
+   if(paramIdx == kHP2) //Set the second HP cutoff.
    {
       topDelay_hp2Cutoff = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setHP2Cutoff(topDelay_hp2Cutoff);
       sprintf(writeToDisplay, "%4.0f", getExpo(topDelay_hp2Cutoff));
       kHP2Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kPan2) //Set the second panner.
+   if(paramIdx == kPan2) //Set the second panner.
    {
       topDelay_pan2 = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setPan2(topDelay_pan2);
       sprintf(writeToDisplay, "%4.1f", topDelay_pan2*2.0f - 1.0);
       kPan2Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kDelay2) //Set the second delay time.
+   if(paramIdx == kDelay2) //Set the second delay time.
    {
       topDelay_delay2  = GetParam(paramIdx) -> Value() / 100.0;
       sprintf(writeToDisplay, "%4.1f", (int)(topDelay_delay2*15.0f)+1.0f);
       kDelay2Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kFeedback2) //Set the second bottomDelay_feedback.
+   if(paramIdx == kFeedback2) //Set the second bottomDelay_feedback.
    {
    	
       topDelay_fb2 = GetParam(paramIdx) -> Value() / 100.0;
@@ -690,7 +690,7 @@ void BizzareDelay2014::OnParamChange(int paramIdx)
       sprintf(writeToDisplay, "%4.2f", topDelay_fb2);
       kFeedback2Display->SetTextFromPlug(writeToDisplay);
    }else
-   if(paramIdx == EParams::kLevel2) //Set the second gain.
+   if(paramIdx == kLevel2) //Set the second gain.
    {
       topDelay_level2 = GetParam(paramIdx) -> Value() / 100.0;
       stereoDelay->setLevel2(topDelay_level2);

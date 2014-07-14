@@ -438,6 +438,22 @@
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		3B13A47D197455470009E213 /* DSP_OnePoleHP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_OnePoleHP.cpp; sourceTree = "<group>"; };
+		3B13A47E197455470009E213 /* DSP_OnePoleHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_OnePoleHP.h; sourceTree = "<group>"; };
+		3B13A47F197455470009E213 /* DSP_OnepoleLP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_OnepoleLP.cpp; sourceTree = "<group>"; };
+		3B13A480197455470009E213 /* DSP_OnePoleLP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_OnePoleLP.h; sourceTree = "<group>"; };
+		3B13A481197455470009E213 /* DSP_Sinosc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_Sinosc.cpp; sourceTree = "<group>"; };
+		3B13A482197455470009E213 /* DSP_Sinosc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_Sinosc.h; sourceTree = "<group>"; };
+		3B13A483197455470009E213 /* DSP_StereoDelay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_StereoDelay.cpp; sourceTree = "<group>"; };
+		3B13A484197455470009E213 /* DSP_StereoDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_StereoDelay.h; sourceTree = "<group>"; };
+		3B13A485197455470009E213 /* DSP_SVF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_SVF.cpp; sourceTree = "<group>"; };
+		3B13A486197455470009E213 /* DSP_SVF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_SVF.h; sourceTree = "<group>"; };
+		3B13A487197455470009E213 /* DSP_TapeDelay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_TapeDelay.cpp; sourceTree = "<group>"; };
+		3B13A488197455470009E213 /* DSP_TapeDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_TapeDelay.h; sourceTree = "<group>"; };
+		3B13A489197455470009E213 /* DSP_TappedDelay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSP_TappedDelay.cpp; sourceTree = "<group>"; };
+		3B13A48A197455470009E213 /* DSP_TappedDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSP_TappedDelay.h; sourceTree = "<group>"; };
+		3B13A48B197455470009E213 /* paramIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paramIds.h; sourceTree = "<group>"; };
+		3B13A48C197455470009E213 /* utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
 		4F017360154D4BFC0034BE1A /* AAX_CIPlugParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CIPlugParameters.cpp; path = ../../WDL/IPlug/AAX/AAX_CIPlugParameters.cpp; sourceTree = SOURCE_ROOT; };
 		4F017361154D4BFC0034BE1A /* AAX_CIPlugParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAX_CIPlugParameters.h; path = ../../WDL/IPlug/AAX/AAX_CIPlugParameters.h; sourceTree = SOURCE_ROOT; };
 		4F1F1BE9135B1F60003A5BB2 /* wdlendian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wdlendian.h; path = ../../WDL/wdlendian.h; sourceTree = SOURCE_ROOT; };
@@ -731,6 +747,22 @@
 		089C166AFE841209C02AAC07 /* IPlugExample */ = {
 			isa = PBXGroup;
 			children = (
+				3B13A47D197455470009E213 /* DSP_OnePoleHP.cpp */,
+				3B13A47E197455470009E213 /* DSP_OnePoleHP.h */,
+				3B13A47F197455470009E213 /* DSP_OnepoleLP.cpp */,
+				3B13A480197455470009E213 /* DSP_OnePoleLP.h */,
+				3B13A481197455470009E213 /* DSP_Sinosc.cpp */,
+				3B13A482197455470009E213 /* DSP_Sinosc.h */,
+				3B13A483197455470009E213 /* DSP_StereoDelay.cpp */,
+				3B13A484197455470009E213 /* DSP_StereoDelay.h */,
+				3B13A485197455470009E213 /* DSP_SVF.cpp */,
+				3B13A486197455470009E213 /* DSP_SVF.h */,
+				3B13A487197455470009E213 /* DSP_TapeDelay.cpp */,
+				3B13A488197455470009E213 /* DSP_TapeDelay.h */,
+				3B13A489197455470009E213 /* DSP_TappedDelay.cpp */,
+				3B13A48A197455470009E213 /* DSP_TappedDelay.h */,
+				3B13A48B197455470009E213 /* paramIds.h */,
+				3B13A48C197455470009E213 /* utilities.h */,
 				52FBBED30D0CF143001C8B8A /* resource.h */,
 				52FBBED20D0CF13D001C8B8A /* BizzareDelay2014.h */,
 				52FBBED00D0CF139001C8B8A /* BizzareDelay2014.cpp */,

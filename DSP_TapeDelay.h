@@ -86,7 +86,7 @@ class TapeDelay
    /**
    Main process function.
    */
-   inline float* TapeDelay::process(float in)
+   inline float* process(float in)
    {
       //bottomDelay_smooth delay time
       //must compensate this factor for sample rate change

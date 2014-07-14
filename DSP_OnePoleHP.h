@@ -31,7 +31,7 @@ class OnePoleHP
    /**
    * Main process function.
    */
-   inline float OnePoleHP::process(float in)
+   inline float process(float in)
    {
       out = in*a0 + previn*a1 + out*b1;
       previn = in;

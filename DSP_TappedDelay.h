@@ -36,7 +36,7 @@ class ReadHead
    /**
    Main process function.
    */
-   inline float ReadHead::process(int read, float *buffer1)
+   inline float process(int read, float *buffer1)
    {
       //get delayed value from the read head
       final_read = (float)read-(float)width;
@@ -97,7 +97,7 @@ class TapDelay
    /**
    Main process function.
    */
-   inline float TapDelay::Process(float in)
+   inline float Process(float in)
    {
       //increment read write heads
       //these are essentially integers, and increment
