@@ -55,6 +55,7 @@
     <ClInclude Include="DSP_TapeDelay.h">
       <Filter>vst2</Filter>
     </ClInclude>
+    <ClInclude Include="paramIds.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BizzareDelay2014.rc" />

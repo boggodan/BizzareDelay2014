@@ -99,7 +99,7 @@ public:
   
   void ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames);
   
-  private:
+  private: 
 
   //the main delay objects
   TapeDelay *tapeDelay1;
