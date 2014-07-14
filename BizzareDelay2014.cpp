@@ -61,13 +61,13 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
 {
    TRACE;
 
-   MessageBox(0, "Starting load-up", "LOADUP", MB_OK);
+   
 
    //init the main delay objects
    tapeDelay1 = new TapeDelay(44100);
    stereoDelay = new StereoDelay(44100);
 
-    MessageBox(0, "Initialized audio objects", "Initialized audio objects", MB_OK);
+    
 
    //Initial mixing levels (will be reset by preset loading anyway).
    dry1 = dry2 =  0.0f;
@@ -131,15 +131,15 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
    GetParam(kFeedback2)->InitDouble("Feedback2", 50., 0., 100.0, 0.01, "%");
    GetParam(kLevel2)->InitDouble("Level2", 50., 0., 100.0, 0.01, "%");
    
-    MessageBox(0, "Initialized vst params", "Initialized vst params", MB_OK);
+    
 
    IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
    
-   MessageBox(0, "Created graphics", "Created graphics", MB_OK);
+   
 
    pGraphics->AttachBackground(BG_ID,BG_FN);
    
-   MessageBox(0, "Attached background", "Attached background", MB_OK);
+   
 
    IBitmap knob_top_big = pGraphics->LoadIBitmap(KNOB_TOP1, KNOB_TOP1_FN, 60);
    IBitmap knob_top_small = pGraphics->LoadIBitmap(KNOB_TOP2, KNOB_TOP2_FN, 60);
@@ -150,7 +150,7 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
    IBitmap switcher_button = pGraphics->LoadIBitmap(SWITCHER_BUTTON, SWITCHER_BUTTON_FN, 2);
    IBitmap pong_button = pGraphics->LoadIBitmap(PONG_BTN, PONG_BTN_FN, 2);
    
-   MessageBox(0, "Loaded bitmaps", "Loaded bitmaps", MB_OK);
+ 
 
    IText topText = IText(11);
    IText bottomText = IText(11);
@@ -158,7 +158,7 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
    IColor topColor =  IColor(255,153,153,255);
    
    IColor bottomColor  = IColor(255,255,255,0);
-   MessageBox(0, "Colors setup", "Colors setup", MB_OK);
+   
    topText.mColor= topColor;
    bottomText.mColor= bottomColor;
    //bottom
@@ -240,9 +240,9 @@ BizzareDelay2014::BizzareDelay2014(IPlugInstanceInfo instanceInfo)
    
    pGraphics->AttachControl(new ISwitchControl(this, 390, 402, k2pong, &pong_button, IChannelBlend::kBlendNone));
    pGraphics->AttachControl(new ISwitchControl(this, 543,83, kswitch, &switcher_button, IChannelBlend::kBlendNone));
-  MessageBox(0, "Addded controls", "Addded controls", MB_OK);
+  
    AttachGraphics(pGraphics);
-    MessageBox(0, "Attached pgraphics", "Attached pgraphics", MB_OK);
+ 
    //Default presets
 
    MakePresetFromNamedParams(  (char*) "Bizzare Delay", 27, 
